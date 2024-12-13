@@ -3,28 +3,28 @@ function getComputerChoice() {
   let num = Math.floor(Math.random() * 3);
   if (num === 0) {
     console.log("Opponent chose Rock");
-    return "R";
+    return "r";
   } else if (num === 1) {
     console.log("Opponent chose P");
-    return "P";
+    return "p";
   } else {
     console.log("Opponent chose Scissors");
-    return "S";
+    return "s";
   }
 }
 
 // getHumanChoice() returns either rock, P or scissors based on Prompt inputted by the user
 function getHumanChoice() {
   let humanChoice = prompt("R:Rock , P:P , S:Scissors");
-  if (humanChoice.toLowerCase() === "R") {
+  if (humanChoice.toLowerCase() === "r") {
     console.log("You chose Rock");
-    return "R";
-  } else if (humanChoice.toLowerCase() === "P") {
-    console.log("You chose P");
-    return "P";
-  } else if (humanChoice.toLowerCase() === "S") {
+    return "r";
+  } else if (humanChoice.toLowerCase() === "p") {
+    console.log("You chose Paper");
+    return "p";
+  } else if (humanChoice.toLowerCase() === "s") {
     console.log("You chose scissors");
-    return "S";
+    return "s";
   }
 }
 
@@ -33,28 +33,28 @@ let computerScore = 0;
 
 // playround() evaluates both the inputs and returns who scored.
 function playRound(humanChoice, computerChoice) {
-  if (computerChoice === "R" && humanChoice === "R") {
+  if (computerChoice === "r" && humanChoice === "r") {
     console.log("both rock. draw");
-  } else if (computerChoice === "P" && humanChoice === "P") {
+  } else if (computerChoice === "p" && humanChoice === "p") {
     console.log("both P. draw");
-  } else if (computerChoice === "S" && humanChoice === "S") {
+  } else if (computerChoice === "s" && humanChoice === "s") {
     console.log("both scissors. draw");
-  } else if (computerChoice === "rock" && humanChoice === "P") {
+  } else if (computerChoice === "r" && humanChoice === "p") {
     console.log("You won this round");
     humanScore += 1;
-  } else if (computerChoice === "P" && humanChoice === "R") {
+  } else if (computerChoice === "p" && humanChoice === "r") {
     console.log("computer won this round");
     computerScore += 1;
-  } else if (computerChoice === "R" && humanChoice === "S") {
+  } else if (computerChoice === "r" && humanChoice === "s") {
     console.log("Computer won this round");
     computerScore += 1;
-  } else if (computerChoice === "S" && humanChoice === "R") {
+  } else if (computerChoice === "s" && humanChoice === "r") {
     console.log("You won this round");
     humanScore += 1;
-  } else if (computerChoice === "P" && humanChoice === "S") {
+  } else if (computerChoice === "p" && humanChoice === "s") {
     console.log("You won this round");
     humanScore += 1;
-  } else if (computerChoice === "S" && humanChoice === "P") {
+  } else if (computerChoice === "s" && humanChoice === "P") {
     console.log("computer won this round");
     computerScore += 1;
   }
