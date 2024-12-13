@@ -5,7 +5,7 @@ function getComputerChoice() {
     console.log("Opponent chose Rock");
     return "r";
   } else if (num === 1) {
-    console.log("Opponent chose P");
+    console.log("Opponent chose Paper");
     return "p";
   } else {
     console.log("Opponent chose Scissors");
