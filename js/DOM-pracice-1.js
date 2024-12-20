@@ -23,3 +23,12 @@ div1.appendChild(para2);
 container.appendChild(para1);
 container.appendChild(h3_1);
 container.appendChild(div1);
+
+const btn1 = document.getElementById("btn1");
+const btn2 = document.getElementById("btn2");
+
+btn1.onclick = () => alert("Hello World : with in-JS onclick");
+
+btn2.addEventListener("click", () => {
+  alert("Hello World: with a 'click' event-listener");
+});
