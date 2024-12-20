@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JavaScript Page 1</title>
+    <style>
+      button {
+        margin: 10px;
+      }
+    </style>
   </head>
   <body>
     <center><h1>JavaScript Page 1</h1></center>
@@ -14,6 +19,12 @@
           I bet, my code is the messiest and the least optimized of all.</mark
         >
       </h3>
+    </center>
+    <center>
+      <div id="mainContainer"></div>
+      <div id="scoreContainer">
+        <ul style="list-style: none"></ul>
+      </div>
     </center>
     <script>
       // getComputerChoice() returns either rock, P or scissors based on Math.random()
@@ -31,68 +42,126 @@
         }
       }
 
-      // getHumanChoice() returns either rock, P or scissors based on Prompt inputted by the user
-      function getHumanChoice() {
-        let humanChoice = prompt("R:Rock , P:P , S:Scissors");
-        if (humanChoice.toLowerCase() === "r") {
-          console.log("You chose Rock");
-          return "r";
-        } else if (humanChoice.toLowerCase() === "p") {
-          console.log("You chose Paper");
-          return "p";
-        } else if (humanChoice.toLowerCase() === "s") {
-          console.log("You chose scissors");
-          return "s";
-        }
-      }
-
       let humanScore = 0;
       let computerScore = 0;
+
+      const mainContainer = document.querySelector("#mainContainer");
+      const scoreContainer = document.querySelector("#scoreContainer");
+      const myList = document.querySelector("#scoreContainer>ul");
+
+      const btnRock = document.createElement("button");
+      btnRock.textContent = "Rock";
+      const btnPaper = document.createElement("button");
+      btnPaper.textContent = "Paper";
+      const btnScissors = document.createElement("button");
+      btnScissors.textContent = "Scissors";
+
+      mainContainer.appendChild(btnRock);
+      mainContainer.appendChild(btnPaper);
+      mainContainer.appendChild(btnScissors);
+
+      btnRock.addEventListener("click", (e) => {
+        console.log("you chose ROCK");
+
+        const roundRslt = document.createElement("li");
+        roundRslt.textContent = playRound("r", getComputerChoice());
+
+        myList.appendChild(roundRslt);
+      });
+      btnPaper.addEventListener("click", (e) => {
+        const roundRslt = document.createElement("li");
+        roundRslt.textContent = playRound("p", getComputerChoice());
+        myList.appendChild(roundRslt);
+      });
+      btnScissors.addEventListener("click", (e) => {
+        const roundRslt = document.createElement("li");
+        roundRslt.textContent = playRound("s", getComputerChoice());
+        myList.appendChild(roundRslt);
+      });
 
       // playround() evaluates both the inputs and returns who scored.
       function playRound(humanChoice, computerChoice) {
         if (computerChoice === "r" && humanChoice === "r") {
-          console.log("both rock. draw");
+          return (
+            "both rock. draw " +
+            "human: " +
+            humanScore +
+            " | computer: " +
+            computerScore
+          );
         } else if (computerChoice === "p" && humanChoice === "p") {
-          console.log("both P. draw");
+          return (
+            "both P. draw" +
+            "human: " +
+            humanScore +
+            " | computer: " +
+            computerScore
+          );
         } else if (computerChoice === "s" && humanChoice === "s") {
-          console.log("both scissors. draw");
+          return (
+            "both scissors. draw" +
+            "human: " +
+            humanScore +
+            " | computer: " +
+            computerScore
+          );
         } else if (computerChoice === "r" && humanChoice === "p") {
-          console.log("You won this round");
           humanScore += 1;
+          return (
+            "You won this round" +
+            "human: " +
+            humanScore +
+            " | computer: " +
+            computerScore
+          );
         } else if (computerChoice === "p" && humanChoice === "r") {
-          console.log("computer won this round");
           computerScore += 1;
+          return (
+            "computer won this round" +
+            "human: " +
+            humanScore +
+            " | computer: " +
+            computerScore
+          );
         } else if (computerChoice === "r" && humanChoice === "s") {
-          console.log("Computer won this round");
           computerScore += 1;
+          return (
+            "Computer won this round" +
+            "human: " +
+            humanScore +
+            " | computer: " +
+            computerScore
+          );
         } else if (computerChoice === "s" && humanChoice === "r") {
-          console.log("You won this round");
           humanScore += 1;
+          return (
+            "You won this round" +
+            "human: " +
+            humanScore +
+            " | computer: " +
+            computerScore
+          );
         } else if (computerChoice === "p" && humanChoice === "s") {
-          console.log("You won this round");
           humanScore += 1;
+          return (
+            "You won this round" +
+            "human: " +
+            humanScore +
+            " | computer: " +
+            computerScore
+          );
         } else if (computerChoice === "s" && humanChoice === "P") {
-          console.log("computer won this round");
           computerScore += 1;
+          return (
+            "computer won this round" +
+            "human: " +
+            humanScore +
+            " | computer: " +
+            computerScore
+          );
         }
         console.log("human: ", humanScore, " | computer: ", computerScore);
       }
-
-      function playGame() {
-        for (i = 0; i < 5; i++) {
-          playRound(getHumanChoice(), getComputerChoice());
-        }
-        if (humanScore < computerScore) {
-          console.log("Computer won the game!");
-        } else if (humanScore > computerScore) {
-          console.log("You won the game!");
-        } else {
-          console.log("the game is draw!, nobody won.");
-        }
-      }
-
-      playGame();
     </script>
   </body>
 </html>
