@@ -62,10 +62,8 @@
 
       btnRock.addEventListener("click", (e) => {
         console.log("you chose ROCK");
-
         const roundRslt = document.createElement("li");
         roundRslt.textContent = playRound("r", getComputerChoice());
-
         myList.appendChild(roundRslt);
       });
       btnPaper.addEventListener("click", (e) => {
@@ -84,23 +82,23 @@
         if (computerChoice === "r" && humanChoice === "r") {
           return (
             "both rock. draw " +
-            "human: " +
+            " | human: " +
             humanScore +
             " | computer: " +
             computerScore
           );
         } else if (computerChoice === "p" && humanChoice === "p") {
           return (
-            "both P. draw" +
-            "human: " +
+            "both P. draw " +
+            " | human: " +
             humanScore +
             " | computer: " +
             computerScore
           );
         } else if (computerChoice === "s" && humanChoice === "s") {
           return (
-            "both scissors. draw" +
-            "human: " +
+            "both scissors. draw " +
+            " | human: " +
             humanScore +
             " | computer: " +
             computerScore
@@ -108,8 +106,8 @@
         } else if (computerChoice === "r" && humanChoice === "p") {
           humanScore += 1;
           return (
-            "You won this round" +
-            "human: " +
+            "You won this round " +
+            " | human: " +
             humanScore +
             " | computer: " +
             computerScore
@@ -117,8 +115,8 @@
         } else if (computerChoice === "p" && humanChoice === "r") {
           computerScore += 1;
           return (
-            "computer won this round" +
-            "human: " +
+            "computer won this round " +
+            " | human: " +
             humanScore +
             " | computer: " +
             computerScore
@@ -126,8 +124,8 @@
         } else if (computerChoice === "r" && humanChoice === "s") {
           computerScore += 1;
           return (
-            "Computer won this round" +
-            "human: " +
+            "Computer won this round " +
+            " | human: " +
             humanScore +
             " | computer: " +
             computerScore
@@ -135,8 +133,8 @@
         } else if (computerChoice === "s" && humanChoice === "r") {
           humanScore += 1;
           return (
-            "You won this round" +
-            "human: " +
+            "You won this round " +
+            " | human: " +
             humanScore +
             " | computer: " +
             computerScore
@@ -144,8 +142,8 @@
         } else if (computerChoice === "p" && humanChoice === "s") {
           humanScore += 1;
           return (
-            "You won this round" +
-            "human: " +
+            "You won this round " +
+            " | human: " +
             humanScore +
             " | computer: " +
             computerScore
@@ -153,8 +151,8 @@
         } else if (computerChoice === "s" && humanChoice === "P") {
           computerScore += 1;
           return (
-            "computer won this round" +
-            "human: " +
+            "computer won this round " +
+            " | human: " +
             humanScore +
             " | computer: " +
             computerScore
