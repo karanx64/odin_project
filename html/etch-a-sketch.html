@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Etch a sketch</title>
+    <style>
+      :root {
+        --grid-cell-height: calc(96vh / 16);
+        --grid-cell-width: calc(96vh / 16);
+        --grid-cell-color: blue;
+        --grid-cell-border: 1px solid red;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .gridContainer {
+        display: flex;
+        flex-direction: column; /* Ensures rows stack vertically */
+        border: 1px solid black;
+        width: 96vh;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <main></main>
+    <script>
+      const mainContainer = document.querySelector("main");
+      mainContainer.classList.add("gridContainer");
+      let gridRow;
+      let gridColumn;
+      for (let i = 0; i < 16; i++) {
+        gridRow = document.createElement("div");
+        gridRow.style.display = "flex";
+        mainContainer.appendChild(gridRow);
+        for (let j = 0; j < 16; j++) {
+          gridColumn = document.createElement("div");
+          gridRow.appendChild(gridColumn);
+          gridColumn.style.border = "var(--grid-cell-border)";
+          gridColumn.style.height = "var(--grid-cell-height)";
+          gridColumn.style.width = "var(--grid-cell-width)";
+          gridColumn.style.boxSizing = "border-box";
+          gridColumn.style.backgroundColor = "white";
+
+          // Add hover effect using JavaScript
+          gridColumn.addEventListener("mouseover", (e) => {
+            e.target.style.backgroundColor = "red";
+          });
+        }
+      }
+    </script>
+  </body>
+</html>
