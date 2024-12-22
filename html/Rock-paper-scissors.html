@@ -8,6 +8,12 @@
       button {
         margin: 10px;
       }
+      ul > li {
+        margin-left: -60px;
+      }
+      #GameResultDisplay > p {
+        margin-left: -20px;
+      }
     </style>
   </head>
   <body>
@@ -25,6 +31,9 @@
       <div id="scoreContainer">
         <ul style="list-style: none"></ul>
       </div>
+      <div id="GameResultDisplay">
+        <p></p>
+      </div>
     </center>
     <script>
       // getComputerChoice() returns either rock, P or scissors based on Math.random()
@@ -36,7 +45,7 @@
         } else if (num === 1) {
           console.log("Opponent chose Paper");
           return "p";
-        } else {
+        } else if (num === 2) {
           console.log("Opponent chose Scissors");
           return "s";
         }
@@ -61,105 +70,82 @@
       mainContainer.appendChild(btnScissors);
 
       btnRock.addEventListener("click", (e) => {
-        console.log("you chose ROCK");
-        const roundRslt = document.createElement("li");
-        roundRslt.textContent = playRound("r", getComputerChoice());
-        myList.appendChild(roundRslt);
+        const myListItem = document.createElement("li");
+        const roundRslt = playRound("r", getComputerChoice());
+        myList.appendChild(myListItem);
+        myListItem.textContent =
+          "human: " +
+          playRound().humanScore +
+          " | computer: " +
+          playRound().computerScore;
+        gameResult(playRound().humanScore, playRound().computerScore);
       });
       btnPaper.addEventListener("click", (e) => {
-        const roundRslt = document.createElement("li");
-        roundRslt.textContent = playRound("p", getComputerChoice());
-        myList.appendChild(roundRslt);
+        const myListItem = document.createElement("li");
+        const roundRslt = playRound("p", getComputerChoice());
+        myList.appendChild(myListItem);
+        myListItem.textContent =
+          "human: " +
+          playRound().humanScore +
+          " | computer: " +
+          playRound().computerScore;
+        gameResult(playRound().humanScore, playRound().computerScore);
       });
       btnScissors.addEventListener("click", (e) => {
-        const roundRslt = document.createElement("li");
-        roundRslt.textContent = playRound("s", getComputerChoice());
-        myList.appendChild(roundRslt);
+        const myListItem = document.createElement("li");
+        const roundRslt = playRound("s", getComputerChoice());
+        myList.appendChild(myListItem);
+        myListItem.textContent =
+          "human: " +
+          playRound().humanScore +
+          " | computer: " +
+          playRound().computerScore;
+        gameResult(playRound().humanScore, playRound().computerScore);
       });
 
       // playround() evaluates both the inputs and returns who scored.
       function playRound(humanChoice, computerChoice) {
         if (computerChoice === "r" && humanChoice === "r") {
-          return (
-            "both rock. draw " +
-            " | human: " +
-            humanScore +
-            " | computer: " +
-            computerScore
-          );
+          return "d";
         } else if (computerChoice === "p" && humanChoice === "p") {
-          return (
-            "both P. draw " +
-            " | human: " +
-            humanScore +
-            " | computer: " +
-            computerScore
-          );
+          return "d";
         } else if (computerChoice === "s" && humanChoice === "s") {
-          return (
-            "both scissors. draw " +
-            " | human: " +
-            humanScore +
-            " | computer: " +
-            computerScore
-          );
+          return "d";
         } else if (computerChoice === "r" && humanChoice === "p") {
           humanScore += 1;
-          return (
-            "You won this round " +
-            " | human: " +
-            humanScore +
-            " | computer: " +
-            computerScore
-          );
+          return "hw";
         } else if (computerChoice === "p" && humanChoice === "r") {
           computerScore += 1;
-          return (
-            "computer won this round " +
-            " | human: " +
-            humanScore +
-            " | computer: " +
-            computerScore
-          );
+          return "cw";
         } else if (computerChoice === "r" && humanChoice === "s") {
           computerScore += 1;
-          return (
-            "Computer won this round " +
-            " | human: " +
-            humanScore +
-            " | computer: " +
-            computerScore
-          );
+          return "cw";
         } else if (computerChoice === "s" && humanChoice === "r") {
           humanScore += 1;
-          return (
-            "You won this round " +
-            " | human: " +
-            humanScore +
-            " | computer: " +
-            computerScore
-          );
+          return "hw";
         } else if (computerChoice === "p" && humanChoice === "s") {
           humanScore += 1;
-          return (
-            "You won this round " +
-            " | human: " +
-            humanScore +
-            " | computer: " +
-            computerScore
-          );
-        } else if (computerChoice === "s" && humanChoice === "P") {
+          return "hw";
+        } else if (computerChoice === "s" && humanChoice === "p") {
           computerScore += 1;
-          return (
-            "computer won this round " +
-            " | human: " +
-            humanScore +
-            " | computer: " +
-            computerScore
-          );
+          return "cw";
         }
-        console.log("human: ", humanScore, " | computer: ", computerScore);
         return { humanScore, computerScore };
+      }
+      function gameResult(humanScore, computerScore) {
+        const GameResultDisplay = document.querySelector("div>p");
+
+        if (humanScore == 5 && computerScore < 5) {
+          btnRock.style.display = "none";
+          btnPaper.style.display = "none";
+          btnScissors.style.display = "none";
+          GameResultDisplay.textContent = "game ends, Human wins";
+        } else if (computerScore == 5 && humanScore < 5) {
+          btnRock.style.display = "none";
+          btnPaper.style.display = "none";
+          btnScissors.style.display = "none";
+          GameResultDisplay.textContent = "game ends, computer wins";
+        }
       }
     </script>
   </body>
