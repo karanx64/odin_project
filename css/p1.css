@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 .row {
     display: flex;
     align-items: center;
@@ -18,4 +23,10 @@
 .col2>li {
     display: inline;
     margin-left: 20px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0px;
+    background-color: rgb(70, 70, 70);
 }
