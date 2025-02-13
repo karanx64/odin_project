@@ -1,0 +1,21 @@
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.header {
+    background-color: goldenrod;
+}
+
+.container {
+    background-image: url(../images/hills1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.col2>li {
+    display: inline;
+    margin-left: 20px;
+}
