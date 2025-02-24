@@ -9,6 +9,10 @@ body {
     flex-direction: column;
 }
 
+h2 {
+    margin: 20px auto;
+}
+
 .calculator {
     border: 2px solid gray;
     width: 400px;
@@ -24,6 +28,10 @@ body {
     grid-template-columns: auto auto auto auto;
     gap: 5px;
 
+}
+
+.operatorButton {
+    background-color: red;
 }
 
 .cal-Container {
