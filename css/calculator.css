@@ -1,6 +1,12 @@
 * {
     border-radius: 20px;
     font-family: "Courier New", Courier, monospace;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
 }
 
 .calculator {
@@ -8,6 +14,25 @@
     width: 400px;
     padding: 10px;
     margin: auto;
+}
+
+.button-container {
+    border: 2px solid gray;
+    width: 400px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 5px;
+
+}
+
+.cal-Container {
+    margin: auto;
+    border: 2px solid gray;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
 }
 
 .buttons {
@@ -28,10 +53,10 @@
 
 .calcDisplay {
     background-color: rgb(162, 170, 142);
-    padding: 10px;
-    padding-right: 20px;
-    margin-bottom: 10px;
     text-align: right;
+    width: 100%;
+    margin: 10px auto;
+
 }
 
 .buttons>button:hover {
