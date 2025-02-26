@@ -1,27 +1,35 @@
 * {
     border-radius: 20px;
-    font-family: "Courier New", Courier, monospace;
+    font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
 }
 
 body {
     display: flex;
     flex-direction: column;
+    height: 90vh;
 }
 
 h2 {
     margin: 20px auto;
 }
 
+button {
+    outline: none;
+    border: none;
+    padding: 5px;
+    margin: 3px;
+    font-size: 1.2rem;
+}
+
 .calculator {
     border: 2px solid gray;
-    width: 400px;
+    max-width: 400px;
     padding: 10px;
     margin: auto;
 }
 
 .button-container {
-    border: 2px solid gray;
     width: 400px;
     padding: 10px;
     display: grid;
@@ -31,66 +39,47 @@ h2 {
 }
 
 .operatorButton {
-    background-color: orange;
+    background-color: rgb(255, 169, 90);
 }
 
 
 .cal-Container {
     margin: auto;
-    border: 2px solid gray;
     align-items: center;
     display: flex;
     flex-direction: column;
     padding: 10px;
+    background-color: rgb(31, 31, 31);
 }
 
 #clear {
-    background-color: red;
+    background-color: rgb(216, 185, 255);
 }
 
 #equals {
-    background-color: green;
+    background-color: rgb(161, 255, 161);
 }
 
-.buttons {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    gap: 5px;
-}
 
-.buttons>button {
-    background-color: gray;
-    font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
-}
 
-.buttons>button:nth-child(5) {
-    background-color: orange;
-}
+
+
 
 .calcDisplay {
     display: flex;
-
-    visibility: visible !important;
-    background-color: rgb(162, 170, 142);
+    background-color: rgb(61, 61, 61);
     text-align: right;
-    width: 100%;
     margin: 10px auto;
-    color: black !important;
+    color: white;
     height: 50px;
-    font-size: larger;
-    font-weight: bold;
-    border: 2px solid black;
+    font-size: 2rem;
     align-items: center;
     justify-content: flex-end;
     padding: 0 20px;
+    width: 100%;
 }
 
-.buttons>button:hover {
+button:hover {
     background-color: white;
     cursor: pointer;
-}
-
-.blue {
-    background-color: blue;
 }
