@@ -1,42 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foundation Calculator</title>
+    <link rel="stylesheet" href="../css/calculator.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Foundation Calculator</title>
-  <link rel="stylesheet" href="../css/calculator.css">
-  <script defer src="../js/calculator.js"></script>
-</head>
+  <body>
+    <h2>Foundation Calculator v0.0.1</h2>
 
-<body>
-
-    <h2>Foundation Calculator</h2>
-
-  <div class="cal-Container">
-    <input class="calcDisplay" readonly></input>
-    <div class="button-container">
-      <button id="7">7</button>
-      <button id="8">8</button>
-      <button id="9">9</button>
-      <button id="multi" class="operatorButton">*</button>
-      <button id="4">4</button>
-      <button id="5">5</button>
-      <button id="6">6</button>
-      <button id="sub" class="operatorButton">-</button>
-      <button id="1">1</button>
-      <button id="2">2</button>
-      <button id="3">3</button>
-      <button id="add" class="operatorButton">+</button>
-      <button id="0">0</button>
-      <button id="00">00</button>
-      <button id="point">.</button>
-      <button id="div" class="operatorButton">/</button>
-      <button id="clear" class="clearButton">C</button>
-      <button id="equals" class="equalsButton">=</button>
+    <div class="cal-Container">
+      <div class="calcDisplay"></div>
+      <div class="button-container">
+        <button class="number">7</button>
+        <button class="number">8</button>
+        <button class="number">9</button>
+        <button id="multi" class="operatorButton">*</button>
+        <button class="number">4</button>
+        <button class="number">5</button>
+        <button class="number">6</button>
+        <button id="sub" class="operatorButton">-</button>
+        <button class="number">1</button>
+        <button class="number">2</button>
+        <button class="number">3</button>
+        <button id="add" class="operatorButton">+</button>
+        <button class="number">0</button>
+        <button class="number">00</button>
+        <button id="decimal">.</button>
+        <button id="div" class="operatorButton">/</button>
+        <button id="clear" class="clearButton">C</button>
+        <button id="equals" class="equalsButton">=</button>
+      </div>
     </div>
-  </div>
-  
-</body>
 
+    <script src="../js/calculator.js"></script>
+  </body>
 </html>
