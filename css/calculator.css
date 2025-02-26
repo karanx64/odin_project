@@ -60,16 +60,18 @@ button {
 
 
 .calcDisplay {
-    display: flex;
+    display: block;
     background-color: rgb(61, 61, 61);
     text-align: right;
+
     margin: 10px auto;
+    padding: 8px 20px;
     color: white;
     height: 50px;
     font-size: 2rem;
     align-items: center;
     justify-content: flex-end;
-    padding: 0 20px;
+
     width: 100%;
 }
 
