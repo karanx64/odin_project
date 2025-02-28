@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>task 1,2,3</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        transition: all ease-in-out 0.3s;
+      }
+      #name {
+        color: purple;
+        background-color: pink;
+        margin: 10px;
+      }
+      #name::placeholder {
+        color: blue;
+      }
+      .card {
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin: 10px 0;
+        padding: 10px;
+        background-color: rgb(185, 185, 185);
+        border-radius: 1rem;
+      }
+      .card h3::before {
+        content: "";
+        background-image: url(../images/user.jpg);
+        display: block;
+        height: 200px;
+        width: 200px;
+        background-size: cover;
+        margin: auto;
+        border-radius: 100%;
+      }
+      .card h3::after {
+        display: block;
+        content: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat, tempore?";
+        font-weight: 100;
+      }
+      .cardSection {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .card:hover {
+        transform: scale(1.1);
+      }
+      .card:active {
+        background-color: rgb(121, 121, 255);
+        color: blue;
+      }
+      .card:focus {
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- form placeholder color --done
+    pseudo class and element -cards
+    JS- on focus, blur, active, hover -->
+
+    <form action="">
+      <label for="name"
+        >Name <input type="text" name="" id="name" placeholder="Name"
+      /></label>
+    </form>
+    <div class="cardSection">
+      <div class="card">
+        <h3>Lorem, ipsum dolor.</h3>
+      </div>
+      <div class="card">
+        <h3>Lorem, ipsum dolor.</h3>
+      </div>
+      <div class="card">
+        <h3>Lorem, ipsum dolor.</h3>
+      </div>
+      <div class="card">
+        <h3>Lorem, ipsum dolor.</h3>
+      </div>
+      <div class="card">
+        <h3>Lorem, ipsum dolor.</h3>
+      </div>
+      <div class="card">
+        <h3>Lorem, ipsum dolor.</h3>
+      </div>
+      <div class="card">
+        <h3>Lorem, ipsum dolor.</h3>
+      </div>
+      <div class="card">
+        <h3>Lorem, ipsum dolor.</h3>
+      </div>
+      <div class="card">
+        <h3>Lorem, ipsum dolor.</h3>
+      </div>
+      <div class="card">
+        <h3>Lorem, ipsum dolor.</h3>
+      </div>
+    </div>
+
+    <!-- script -->
+    <!-- <script>
+      let cards = document.querySelectorAll(".card");
+
+      cards.forEach((card) => {
+        let cardName = card.querySelector("h3");
+        card.addEventListener("click", () => {
+          cardName.textContent = "hello world!";
+          cardName.style = "color:red";
+        });
+      });
+    </script> -->
+  </body>
+</html>
